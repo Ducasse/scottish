@@ -52,10 +52,17 @@ ECOCard >> initialize [
 
 { #category : #testing }
 ECOCard >> isColorCorrect [
-	"Vérifie que la couleur de la carte est comprise entre A et F"
+	"The color of the card is only between A to F"
 
 	^ {ECOCard A . 'B' . 'C' . 'D' . 'E' .'F'} includes: color 
 	
+]
+
+{ #category : #testing }
+ECOCard >> isValueCorrect [
+	"Vérifie que la valeur de la carte est comprise entre 1 et 9"
+	
+	^ value between: 1 and: 9 
 ]
 
 { #category : #printing }
@@ -74,13 +81,6 @@ ECOCard >> valeur [
 ]
 
 { #category : #accessing }
-ECOCard >> valeur: anInteger [
+ECOCard >> value: anInteger [
 	value := anInteger
-]
-
-{ #category : #testing }
-ECOCard >> valeurCorrecte [
-	"Vérifie que la valeur de la carte est comprise entre 1 et 9"
-	
-	^ value between: 1 and: 9 
 ]
